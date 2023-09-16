@@ -1,0 +1,42 @@
+.svg-design {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  height: 300px;
+}
+
+.header-container {
+  z-index: 2;
+  padding: 48px 0px 20px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+
+  .header {
+    margin-bottom: 48px;
+  }
+
+  .title {
+    color: var(--text-color);
+
+    &.color-inherit {
+      color: inherit;
+    }
+  }
+
+  .subtitle {
+    display: flex;
+    align-items: baseline;
+    color: var(--text-color);
+    font-size: 17px;
+    margin-top: 15px;
+    padding-left: 0px;
+    transition: 500ms;
+  }
+
+  .subtitle:hover {
+    font-size: 17px;
+    padding-left: 15px;
+  }
+}

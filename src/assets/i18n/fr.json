@@ -1,3 +1,4 @@
 {
-  "wiremindApp.main.hello": "Salut"
+  "wiremindApp.searchProject.title": "Analyse des dépôts GitHub",
+  "wiremindApp.searchProject.subtitle": "Explorez et analysez les projets open source sur GitHub"
 }
