@@ -1,0 +1,33 @@
+.lang-selector-container {
+    display: flex;
+
+    .lang-flag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+
+        &:last-child {
+            .divider {
+                display: none;
+            }
+        }
+
+        &.selected {
+            border: 1px solid var(--primary-color-light);
+            background-color: var(--primary-color-light);
+            border-radius: 35px;
+        }
+    }
+
+    .divider {
+        border-right: 1px solid lightgrey;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        &:last-child {
+            display: none;
+        }
+    }
+}

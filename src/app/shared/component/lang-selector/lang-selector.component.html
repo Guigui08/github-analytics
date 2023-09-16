@@ -1,0 +1,8 @@
+<div class="lang-selector-container">
+  <ng-container *ngFor="let lang of langs">
+    <a role="button" class="lang-flag" (click)="onLangChange(lang.value)" [ngClass]="{'selected': currentLang === lang.value}">
+      <img [src]="lang.src" width="25" />
+    </a>
+    <div class="divider"></div>
+  </ng-container>
+</div>

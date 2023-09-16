@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #3a586e;
+  --primary-color-light: rgba(58, 88, 110, 0.2);
+}
+
+@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import 'primeng/resources/primeng.css';
+@import 'primeicons/primeicons.css';
