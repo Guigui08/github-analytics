@@ -37,15 +37,19 @@ export class GitHubService {
       );
   }
 
+  getRepository(repoName: string, owner: string): Observable<GithubRepository> {
+    return this.http.get<any>(`${this.apiUrl}/repos/${owner}/${repoName}`, { observe: 'response' }).pipe(map((res) => res?.body));
+  }
+
   // Function to get the list of committers for a repository
-  getCommitters(repoFullName: string): Observable<any> {
-    const committersUrl = `${this.apiUrl}/repos/${repoFullName}/contributors`;
+  getCommitters(repoName: string, owner: string): Observable<any> {
+    const committersUrl = `${this.apiUrl}/repos/${owner}/${repoName}/contributors`;
     return this.http.get(committersUrl);
   }
 
   // Function to get the last 100 commits for a repository
-  getCommits(repoFullName: string): Observable<any> {
-    const commitsUrl = `${this.apiUrl}/repos/${repoFullName}/commits?per_page=100`;
+  getCommits(repoName: string, owner: string): Observable<any> {
+    const commitsUrl = `${this.apiUrl}/repos/${owner}/${repoName}/commits?per_page=100`;
     return this.http.get(commitsUrl);
   }
 }

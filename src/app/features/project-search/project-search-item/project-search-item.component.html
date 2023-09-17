@@ -1,4 +1,4 @@
-<div class="card-container">
+<div class="card-container" [routerLink]="[repository?.owner?.login, repository?.name]" routerLinkActive="active">
   <div class="content-container">
     <div class="header-container">
       <img *ngIf="repository?.owner?.avatar_url" [src]="repository!.owner!.avatar_url" alt="owner avatar" />
@@ -10,8 +10,8 @@
     </div>
 
     <!--<div class="description-container" *ngIf="repository?.description">
-                      <span>{{ repository.description }}</span>
-                    </div>-->
+                                  <span>{{ repository.description }}</span>
+                                </div>-->
 
     <div class="informations-container">
       <div class="information" *ngIf="repository?.stargazers_count">

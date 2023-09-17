@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./page-header.component.scss'],
 })
 export class WnbPageHeaderComponent {
-  @Input() title!: string;
-  @Input() subTitle!: string;
+  @Input() title!: string | undefined;
+  @Input() subTitle!: string | undefined;
 }
