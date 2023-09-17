@@ -9,9 +9,9 @@
   ></wmd-autocomplete>
 </form>
 
-<ng-container *ngIf="repositories$ | loading | async as obs">
-  <ng-template [ngIf]="obs?.value">
-    <div *ngFor="let repo of obs.value">{{repo | json}}</div>
+<ng-container *ngIf="obs$ | loading | async as obs">
+  <ng-template [ngIf]="obs?.value?.items">
+    <div *ngFor="let repo of obs.value.items">{{repo | json}}</div>
   </ng-template>
 
   <ng-template [ngIf]="obs?.loading">

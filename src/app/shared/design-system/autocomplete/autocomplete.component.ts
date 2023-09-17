@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlContainer, FormGroup, FormGroupDirective } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
-import { AbstractAutoCloseSubscriptions } from '../../component/abstract/auto-close-subscriptions';
+import { AbstractAutoCloseSubscriptions } from '../../component/abstract/abstract-auto-close-subscriptions';
 
 @Component({
   selector: 'wmd-autocomplete',

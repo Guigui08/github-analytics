@@ -5,7 +5,7 @@ import { catchError, isObservable, map, Observable, of, startWith } from 'rxjs';
   name: 'loading',
 })
 export class LoadingPipe implements PipeTransform {
-  transform(val: Observable<any>, ...args: any[]): Observable<any> {
+  transform(val: any, ...args: any[]): Observable<any> {
     return isObservable(val)
       ? val.pipe(
           map((value: any) => ({

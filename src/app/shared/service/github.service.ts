@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { createRequestOption } from '../util/request-util';
+import { Pageable, Paginated } from '../model/pagination/pagination.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +13,27 @@ export class GitHubService {
   constructor(private http: HttpClient) {}
 
   // Function to search for GitHub repositories based on a query
-  searchRepositories(query: string): Observable<any[]> {
-    const searchUrl = `${this.apiUrl}/search/repositories?q=${query}`;
-    return this.http.get<any>(searchUrl).pipe(map((data) => data?.items));
+  searchRepositories(query: string, pageable: Pageable): Observable<Paginated<any[]>> {
+    const params = createRequestOption({
+      q: query,
+      order: pageable?.order,
+      sort: pageable?.sort,
+      per_page: pageable?.size,
+      page: pageable?.page,
+    });
+    return this.http
+      .get<any>(`${this.apiUrl}/search/repositories`, {
+        params,
+        observe: 'response',
+      })
+      .pipe(
+        map((res) => {
+          return {
+            items: res?.body?.items,
+            total: res?.body?.total_count,
+          };
+        })
+      );
   }
 
   // Function to get the list of committers for a repository
