@@ -1,0 +1,26 @@
+<!--<div class="item-container">
+  <div class="item-image">
+    <img [src]="repository?.owner?.avatar_url" alt="owner avatar" />
+  </div>
+  <div class="item-info">
+    <div class="item-name">{{ repository?.name }}</div>
+    <div class="item-description">{{ repository?.description }}</div>
+  </div>
+</div>-->
+
+<div class="card-container">
+  <div class="content-container">
+    <div class="header-container">
+      <img [src]="repository?.owner?.avatar_url" alt="owner avatar" />
+
+      <div class="title-container">
+        <div class="title">{{ repository?.name }}</div>
+        <div class="subtitle">{{ repository?.owner?.login }}</div>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <span>{{ repository?.description }}</span>
+    </div>
+  </div>
+</div>

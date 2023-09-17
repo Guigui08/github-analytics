@@ -8,6 +8,7 @@ import { AutocompleteModule } from '../../shared/design-system/autocomplete/auto
 import { TranslateModule } from '@ngx-translate/core';
 import { LoadingPipeModule } from '../../shared/pipe/loading/loading.module';
 import { LoadingSpinnerModule } from '../../shared/component/loading-spinner/loading-spinner.module';
+import { ProjectSearchItemComponent } from './project-search-item/project-search-item.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ProjectSearchComponent],
+  declarations: [ProjectSearchComponent, ProjectSearchItemComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

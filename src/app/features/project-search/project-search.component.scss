@@ -1,18 +1,30 @@
 .search-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
 
-  & > * {
-    width: 100%;
-  }
+    & > * {
+        width: 100%;
+    }
 }
 
 .loading-spinner-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.projects-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+
+
+    & > *:not(:last-child) {
+        margin-right: 10px;
+    }
 }

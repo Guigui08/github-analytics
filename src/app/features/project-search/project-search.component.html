@@ -11,7 +11,9 @@
 
 <ng-container *ngIf="obs$ | loading | async as obs">
   <ng-template [ngIf]="obs?.value?.items">
-    <div *ngFor="let repo of obs.value.items">{{repo | json}}</div>
+    <div class="projects-container">
+      <wmd-project-search-item *ngFor="let repo of obs.value.items" [repository]="repo"></wmd-project-search-item>
+    </div>
   </ng-template>
 
   <ng-template [ngIf]="obs?.loading">
