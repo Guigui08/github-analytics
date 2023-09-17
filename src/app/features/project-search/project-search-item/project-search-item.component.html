@@ -1,33 +1,29 @@
-<div class="card-container" [routerLink]="[repository?.owner?.login, repository?.name]" routerLinkActive="active">
-  <div class="content-container">
-    <div class="header-container">
-      <img *ngIf="repository?.owner?.avatar_url" [src]="repository!.owner!.avatar_url" alt="owner avatar" />
+<div class="card-container" (click)="onCardClick()">
+    <div class="content-container">
+        <div class="header-container">
+            <img *ngIf="repository?.owner?.avatar_url" [src]="repository!.owner!.avatar_url" alt="owner avatar"/>
 
-      <div class="title-container">
-        <div class="title" *ngIf="repository?.name">{{ repository!.name }}</div>
-        <div *ngIf="repository?.owner?.login" class="subtitle">{{ repository.owner!.login }}</div>
-      </div>
-    </div>
-
-    <!--<div class="description-container" *ngIf="repository?.description">
-                                  <span>{{ repository.description }}</span>
-                                </div>-->
-
-    <div class="informations-container">
-      <div class="information" *ngIf="repository?.stargazers_count">
-        <fa-icon icon="star"></fa-icon>
-        <div class="value">{{ 'wiremindApp.searchProject.project.star' | translate : {stars: repository.stargazers_count} }}</div>
-      </div>
-      <div class="information" *ngIf="repository?.language">
-        <fa-icon icon="laptop"></fa-icon>
-        <div class="value">{{ 'wiremindApp.searchProject.project.language' | translate : {language: repository.language} }}</div>
-      </div>
-      <div class="information" *ngIf="repository?.updated_at">
-        <fa-icon icon="calendar-alt"></fa-icon>
-        <div class="value">
-          {{ 'wiremindApp.searchProject.project.updateDate' | translate : {date: repository.updated_at | localDate} }}
+            <div class="title-container">
+                <div class="title" *ngIf="repository?.name">{{ repository!.name }}</div>
+                <div *ngIf="repository?.owner?.login" class="subtitle">{{ repository.owner!.login }}</div>
+            </div>
         </div>
-      </div>
+
+        <div class="informations-container">
+            <div class="information" *ngIf="repository?.stargazers_count">
+                <fa-icon icon="star"></fa-icon>
+                <div class="value">{{ 'wiremindApp.searchProject.project.star' | translate : {stars: repository.stargazers_count} }}</div>
+            </div>
+            <div class="information" *ngIf="repository?.language">
+                <fa-icon icon="laptop"></fa-icon>
+                <div class="value">{{ 'wiremindApp.searchProject.project.language' | translate : {language: repository.language} }}</div>
+            </div>
+            <div class="information" *ngIf="repository?.updated_at">
+                <fa-icon icon="calendar-alt"></fa-icon>
+                <div class="value">
+                    {{ 'wiremindApp.searchProject.project.updateDate' | translate : {date: repository.updated_at | localDate} }}
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

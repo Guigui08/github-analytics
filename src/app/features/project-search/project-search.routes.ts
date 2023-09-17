@@ -21,16 +21,6 @@ const githubCommitsResolver: ResolveFn<any> = (route: ActivatedRouteSnapshot, st
   return name ? inject(GitHubService).getCommits(name, owner) : of([]);
 };
 
-/*@Injectable({ providedIn: 'root' })
-export class GithubRepositoryResolve implements ResolveFn<GithubRepository> {
-  constructor(private readonly githubService: GitHubService) {}
-
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<GithubRepository> {
-    const { name } = route.params;
-    return name ? this.githubService.getRepositoryByName(name) : of(new GithubRepository());
-  }
-}*/
-
 export const routes: Routes = [
   {
     path: '',

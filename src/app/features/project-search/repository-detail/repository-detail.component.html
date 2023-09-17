@@ -1,1 +1,14 @@
-<wmd-page-header [title]="repository?.name" [subTitle]="repository?.description"></wmd-page-header>
+<wmd-page-header [title]="'wiremindApp.repository.detail.title' | translate"
+                 [subTitle]="'wiremindApp.repository.detail.subtitle' | translate"></wmd-page-header>
+
+<div class="repository-container">
+    <wmd-project-search-item [repository]="repository"></wmd-project-search-item>
+</div>
+
+<div class="main-container">
+    <div>
+        <h3>Committers</h3>
+        <div>Liste de tous les contributeurs à ce projet</div>
+        
+    </div>
+</div>

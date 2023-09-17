@@ -4,5 +4,7 @@
   "wiremindApp.searchProject.search.placeholder": "Rechercher un projet github",
   "wiremindApp.searchProject.project.star": "{{stars}} étoiles",
   "wiremindApp.searchProject.project.language": "Développé en {{language}}",
-  "wiremindApp.searchProject.project.updateDate": "Modifié le {{date}}"
+  "wiremindApp.searchProject.project.updateDate": "Modifié le {{date}}",
+  "wiremindApp.repository.detail.title": "Github Repository",
+  "wiremindApp.repository.detail.subtitle": "Analyse du repository"
 }
