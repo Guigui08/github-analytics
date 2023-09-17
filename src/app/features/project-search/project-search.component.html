@@ -1,5 +1,22 @@
 <wmd-page-header [title]="'wiremindApp.searchProject.title'" [subTitle]="'wiremindApp.searchProject.subtitle'"></wmd-page-header>
 
 <form class="search-form" [formGroup]="searchForm">
-  <wmd-autocomplete [searchForm]="searchForm" searchFormControlName="search"></wmd-autocomplete>
+  <wmd-autocomplete
+    [searchForm]="searchForm"
+    searchFormControlName="search"
+    [searchFormPlaceholder]="'wiremindApp.searchProject.search.placeholder' | translate"
+    (onSearch)="onSearch($event)"
+  ></wmd-autocomplete>
 </form>
+
+<ng-container *ngIf="repositories$ | loading | async as obs">
+  <ng-template [ngIf]="obs?.value">
+    <div *ngFor="let repo of obs.value">{{repo | json}}</div>
+  </ng-template>
+
+  <ng-template [ngIf]="obs?.loading">
+    <div class="loading-spinner-container">
+      <wmd-loading-spinner></wmd-loading-spinner>
+    </div>
+  </ng-template>
+</ng-container>

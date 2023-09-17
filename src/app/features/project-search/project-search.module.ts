@@ -5,6 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { WmdPageHeaderModule } from '../../shared/design-system/page-header/page-header.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AutocompleteModule } from '../../shared/design-system/autocomplete/autocomplete.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { LoadingPipeModule } from '../../shared/pipe/loading/loading.module';
+import { LoadingSpinnerModule } from '../../shared/component/loading-spinner/loading-spinner.module';
 
 const routes: Routes = [
   {
@@ -15,6 +18,15 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [ProjectSearchComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), WmdPageHeaderModule, ReactiveFormsModule, AutocompleteModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    WmdPageHeaderModule,
+    ReactiveFormsModule,
+    AutocompleteModule,
+    TranslateModule,
+    LoadingPipeModule,
+    LoadingSpinnerModule,
+  ],
 })
 export class ProjectSearchModule {}

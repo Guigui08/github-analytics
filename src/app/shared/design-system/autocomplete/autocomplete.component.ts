@@ -20,7 +20,7 @@ export class AutocompleteComponent extends AbstractAutoCloseSubscriptions implem
     this.registerForAutoClose(
       this.searchForm
         ?.get(this.searchFormControlName!)
-        ?.valueChanges?.pipe(distinctUntilChanged(), debounceTime(500))
+        ?.valueChanges?.pipe(distinctUntilChanged(), debounceTime(200))
         .subscribe((value) => {
           console.log(value);
           this.onSearch.emit(value);

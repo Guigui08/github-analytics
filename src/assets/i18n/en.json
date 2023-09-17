@@ -1,4 +1,5 @@
 {
   "wiremindApp.searchProject.title": "GitHub Repository Analytics",
-  "wiremindApp.searchProject.subtitle": "Explore and Analyze Open Source Projects on GitHub"
+  "wiremindApp.searchProject.subtitle": "Explore and Analyze Open Source Projects on GitHub",
+  "wiremindApp.searchProject.search.placeholder": "Search a GitHub repository"
 }
