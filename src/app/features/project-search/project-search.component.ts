@@ -4,17 +4,15 @@ import { Observable } from 'rxjs';
 import { GitHubService } from '../../shared/service/github.service';
 import { AbstractObsList } from '../../shared/component/abstract/abstract-obs-list';
 import { Pageable, Paginated } from '../../shared/model/pagination/pagination.model';
+import { GithubRepository } from '../../shared/model/github/github-repository.model';
 
 @Component({
   selector: 'wmd-project-search',
   templateUrl: './project-search.component.html',
   styleUrls: ['./project-search.component.scss'],
 })
-export class ProjectSearchComponent extends AbstractObsList<any> implements OnInit {
+export class ProjectSearchComponent extends AbstractObsList<GithubRepository> implements OnInit {
   public searchForm!: FormGroup;
-
-  public repositories$!: Observable<any>;
-
   private search!: string;
 
   constructor(private readonly fb: FormBuilder, private readonly githubService: GitHubService) {
@@ -32,7 +30,7 @@ export class ProjectSearchComponent extends AbstractObsList<any> implements OnIn
     this.clear();
   }
 
-  protected findAll(pageable: Pageable): Observable<Paginated<any[]>> | undefined {
+  protected findAll(pageable: Pageable): Observable<Paginated<GithubRepository[]>> | undefined {
     return this.githubService.searchRepositories(this.search, pageable);
   }
 }

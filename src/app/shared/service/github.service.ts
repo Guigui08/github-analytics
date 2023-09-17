@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { createRequestOption } from '../util/request-util';
 import { Pageable, Paginated } from '../model/pagination/pagination.model';
+import { GithubRepository } from '../model/github/github-repository.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class GitHubService {
   constructor(private http: HttpClient) {}
 
   // Function to search for GitHub repositories based on a query
-  searchRepositories(query: string, pageable: Pageable): Observable<Paginated<any[]>> {
+  searchRepositories(query: string, pageable: Pageable): Observable<Paginated<GithubRepository[]>> {
     const params = createRequestOption({
       q: query,
       order: pageable?.order,
