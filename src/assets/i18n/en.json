@@ -1,5 +1,8 @@
 {
   "wiremindApp.searchProject.title": "GitHub Repository Analytics",
   "wiremindApp.searchProject.subtitle": "Explore and Analyze Open Source Projects on GitHub",
-  "wiremindApp.searchProject.search.placeholder": "Search a GitHub repository"
+  "wiremindApp.searchProject.search.placeholder": "Search a GitHub repository",
+  "wiremindApp.searchProject.project.star": "{{stars}} stars",
+  "wiremindApp.searchProject.project.language": "Developed in {{language}}",
+  "wiremindApp.searchProject.project.updateDate": "Modified on {{date}}"
 }
