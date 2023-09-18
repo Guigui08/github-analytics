@@ -7,9 +7,12 @@ import { WmdPageHeaderModule } from '../../shared/design-system/page-header/page
 import { AvatarModule } from 'primeng/avatar';
 import { TooltipModule } from 'primeng/tooltip';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { ContributorsCardComponent } from './contributors-card/contributors-card.component';
+import { CommitsRepartitionCardComponent } from './commits-repartition-card/commits-repartition-card.component';
+import { OrderByModule } from '../../shared/pipe/order-by/order-by.module';
 
 @NgModule({
-  declarations: [RepositoryDetailComponent],
+  declarations: [RepositoryDetailComponent, ContributorsCardComponent, CommitsRepartitionCardComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(repositoryDetailRoutes),
@@ -17,6 +20,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
     AvatarModule,
     TooltipModule,
     ProgressBarModule,
+    OrderByModule,
   ],
 })
 export class RepositoryDetailModule {}

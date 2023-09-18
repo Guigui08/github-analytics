@@ -1,0 +1,22 @@
+.committers-repartition-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    .repartition-row {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        span {
+            flex: 1;
+        }
+
+        p-progressBar {
+            flex: 2;
+        }
+    }
+}

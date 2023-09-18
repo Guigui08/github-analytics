@@ -22,19 +22,6 @@ export class RepositoryDetailComponent implements OnInit {
       this.repository = repository;
       this.committers = committers;
       this.commits = commits;
-      console.log(this.commits);
-      //count commits by committer
-
-      this.commits.forEach((commit: any) => {
-        const committer = commit.commit.author.name;
-        if (this.commitRepartition[committer]) {
-          this.commitRepartition[committer]++;
-        } else {
-          this.commitRepartition[committer] = 1;
-        }
-      });
-      this.commitRepartitionKeys = Object.keys(this.commitRepartition);
-      console.log(this.commitRepartition);
     });
   }
 }

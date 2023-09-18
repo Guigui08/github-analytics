@@ -1,0 +1,9 @@
+<div class="card-container">
+    <span class="title">Contributeurs du projet</span>
+    <div class="committers-container">
+        <ng-container *ngFor="let committer of committers">
+            <p-avatar *ngIf="committer.avatar_url" [image]="committer.avatar_url" [pTooltip]="committer.login!"
+                      size="large" shape="circle"></p-avatar>
+        </ng-container>
+    </div>
+</div>

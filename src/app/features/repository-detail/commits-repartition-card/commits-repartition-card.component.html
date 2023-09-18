@@ -1,0 +1,12 @@
+<div class="card-container">
+    <span class="title">Répartition des 100 derniers commits</span>
+    <div class="committers-repartition-container">
+        <ng-container *ngFor="let stat of repartitionCommits | orderBy : 'count'">
+            <div class="repartition-row">
+                <span>{{stat.name}}</span>&nbsp;
+                <p-progressBar [value]="stat.count" [unit]="''"
+                               [color]="'#ec766e'"></p-progressBar>
+            </div>
+        </ng-container>
+    </div>
+</div>
