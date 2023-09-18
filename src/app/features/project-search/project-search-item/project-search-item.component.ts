@@ -21,6 +21,6 @@ export class ProjectSearchItemComponent {
       throw new Error('Repository owner is not defined');
     }
 
-    this.router.navigate([this.repository.owner.login, this.repository.name]);
+    this.router.navigate(['/repository', this.repository.owner.login, this.repository.name]);
   }
 }

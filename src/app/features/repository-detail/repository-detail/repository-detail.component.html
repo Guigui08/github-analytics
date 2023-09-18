@@ -1,9 +1,5 @@
-<wmd-page-header [title]="'wiremindApp.repository.detail.title' | translate"
-                 [subTitle]="'wiremindApp.repository.detail.subtitle' | translate"></wmd-page-header>
-
-<div class="repository-container">
-    <wmd-project-search-item [repository]="repository"></wmd-project-search-item>
-</div>
+<wmd-page-header [title]="repository?.name"
+                 [subTitle]="repository?.owner?.login"></wmd-page-header>
 
 <div class="main-container">
     <div>
