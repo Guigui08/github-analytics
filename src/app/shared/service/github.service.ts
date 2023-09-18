@@ -4,6 +4,7 @@ import { map, Observable } from 'rxjs';
 import { createRequestOption } from '../util/request-util';
 import { Pageable, Paginated } from '../model/pagination/pagination.model';
 import { GithubRepository } from '../model/github/github-repository.model';
+import { GithubCommitter } from '../model/github/github-committer.model';
 
 @Injectable({
   providedIn: 'root',
@@ -42,9 +43,10 @@ export class GitHubService {
   }
 
   // Function to get the list of committers for a repository
-  getCommitters(repoName: string, owner: string): Observable<any> {
-    const committersUrl = `${this.apiUrl}/repos/${owner}/${repoName}/contributors`;
-    return this.http.get(committersUrl);
+  getCommitters(repoName: string, owner: string): Observable<GithubCommitter[]> {
+    return this.http
+      .get<any>(`${this.apiUrl}/repos/${owner}/${repoName}/contributors`, { observe: 'response' })
+      .pipe(map((res) => res?.body));
   }
 
   // Function to get the last 100 commits for a repository

@@ -11,4 +11,36 @@
     flex-direction: column;
     max-width: 1200px;
     margin: auto;
+
+    .committers-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        & > *:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    .committers-repartition-container {
+        display: flex;
+        flex-direction: column;
+
+        .repartition-row {
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            span {
+                flex: 1;
+            }
+
+            p-progressBar {
+                flex: 2;
+            }
+        }
+    }
 }

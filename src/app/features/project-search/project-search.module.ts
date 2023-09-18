@@ -13,6 +13,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LocalDateModule } from '../../shared/pipe/local-date/local-date.module';
 import { RepositoryDetailComponent } from './repository-detail/repository-detail.component';
 import { routes } from './project-search.routes';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { TooltipModule } from 'primeng/tooltip';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 @NgModule({
   declarations: [ProjectSearchComponent, ProjectSearchItemComponent, RepositoryDetailComponent],
@@ -27,6 +31,10 @@ import { routes } from './project-search.routes';
     LoadingSpinnerModule,
     FontAwesomeModule,
     LocalDateModule,
+    AvatarModule,
+    AvatarGroupModule,
+    TooltipModule,
+    ProgressBarModule,
   ],
 })
 export class ProjectSearchModule {}

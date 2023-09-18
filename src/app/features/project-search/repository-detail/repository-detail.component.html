@@ -9,6 +9,20 @@
     <div>
         <h3>Committers</h3>
         <div>Liste de tous les contributeurs à ce projet</div>
-        
+        <div class="committers-container">
+            <ng-container *ngFor="let committer of committers">
+                <p-avatar *ngIf="committer.avatar_url" [image]="committer.avatar_url" [pTooltip]="committer.login!"
+                          size="large" shape="circle"></p-avatar>
+            </ng-container>
+        </div>
+        <div class="committers-repartition-container">
+            <ng-container *ngFor="let committerName of commitRepartitionKeys">
+                <div class="repartition-row">
+                    <span>{{committerName}}</span>&nbsp;
+                    <p-progressBar [value]="commitRepartition[committerName]" [unit]="''"
+                                   [color]="'#ec766e'"></p-progressBar>
+                </div>
+            </ng-container>
+        </div>
     </div>
 </div>
