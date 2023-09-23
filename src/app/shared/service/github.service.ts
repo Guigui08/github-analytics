@@ -5,6 +5,7 @@ import { createRequestOption } from '../util/request-util';
 import { Pageable, Paginated } from '../model/pagination/pagination.model';
 import { GithubRepository } from '../model/github/github-repository.model';
 import { GithubCommitter } from '../model/github/github-committer.model';
+import { GithubCommitAPI } from '../model/github/github-commit.model';
 
 @Injectable({
   providedIn: 'root',
@@ -50,8 +51,27 @@ export class GitHubService {
   }
 
   // Function to get the last 100 commits for a repository
-  getCommits(repoName: string, owner: string): Observable<any> {
-    const commitsUrl = `${this.apiUrl}/repos/${owner}/${repoName}/commits?per_page=100`;
-    return this.http.get(commitsUrl);
+  getCommits(repoName: string, owner: string): Observable<GithubCommitAPI[]> {
+    const params = createRequestOption({
+      per_page: '100',
+    });
+    return this.http
+      .get<any[]>(`${this.apiUrl}/repos/${owner}/${repoName}/commits`, {
+        params,
+        observe: 'response',
+      })
+      .pipe(
+        map((res) => {
+          if (!res || !res.body) {
+            return [];
+          }
+
+          return res.body.sort((a, b) => {
+            const dateA = new Date(a?.commit?.committer?.date);
+            const dateB = new Date(b?.commit?.committer?.date);
+            return dateB.getTime() - dateA.getTime();
+          });
+        })
+      );
   }
 }

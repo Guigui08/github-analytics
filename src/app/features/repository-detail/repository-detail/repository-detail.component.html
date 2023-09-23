@@ -3,21 +3,22 @@
 </div>
 
 <div class="main-container">
-  <div>
-    <h3>Committers</h3>
+  <div class="paragraph-container">
+    <h3>{{'wiremindApp.repository.detail.committers.title' | translate}}</h3>
+    <span>{{'wiremindApp.repository.detail.committers.description' | translate}}</span>
 
     <div class="contributors-container">
       <wmd-contributors-card [committers]="committers"></wmd-contributors-card>
       <wmd-commits-repartition-card [commits]="commits"></wmd-commits-repartition-card>
     </div>
   </div>
-</div>
 
-<div class="main-container">
-  <div>
-    <h3>Commits</h3>
+  <div class="paragraph-container">
+    <h3>{{'wiremindApp.repository.detail.commits.title' | translate}}</h3>
+    <span>{{'wiremindApp.repository.detail.commits.description' | translate}}</span>
 
     <div class="commits-container">
-        <wmd-commits-timeline [commits]="commits"></wmd-commits-timeline>
+      <wmd-commits-timeline [commits]="commits"></wmd-commits-timeline>
     </div>
   </div>
+</div>

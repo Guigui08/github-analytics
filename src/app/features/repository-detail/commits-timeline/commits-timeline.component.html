@@ -1,9 +1,10 @@
 <div class="card">
-  <p-timeline [value]="commits" align="alternate" styleClass="customized-timeline">
-    <ng-template pTemplate="content" let-event>
-      <p-card [header]="event?.committer?.login" [subheader]="event.commit.committer.date | localDate : 'medium'">
-        <p>{{event.commit.message}}</p>
-      </p-card>
-    </ng-template>
-  </p-timeline>
+    <p-timeline [value]="commits" align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="content" let-event>
+            <p-card [header]="event?.committer?.login || event?.commit?.committer?.name"
+                    [subheader]="event.commit.committer.date | localDate : 'medium'">
+                <p>{{event.commit.message}}</p>
+            </p-card>
+        </ng-template>
+    </p-timeline>
 </div>

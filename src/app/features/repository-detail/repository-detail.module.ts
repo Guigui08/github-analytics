@@ -15,6 +15,7 @@ import { CommitsTimelineComponent } from './commits-timeline/commits-timeline.co
 import { TimelineModule } from 'primeng/timeline';
 import { CardModule } from 'primeng/card';
 import { LocalDateModule } from '../../shared/pipe/local-date/local-date.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [RepositoryDetailComponent, ContributorsCardComponent, CommitsRepartitionCardComponent, CommitsTimelineComponent],
@@ -30,6 +31,7 @@ import { LocalDateModule } from '../../shared/pipe/local-date/local-date.module'
     TimelineModule,
     CardModule,
     LocalDateModule,
+    TranslateModule,
   ],
 })
 export class RepositoryDetailModule {}

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { GithubCommitAPI } from '../../../shared/model/github/github-commit.model';
 
 @Component({
   selector: 'wmd-commits-timeline',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./commits-timeline.component.scss'],
 })
 export class CommitsTimelineComponent {
-  @Input() commits!: any[];
+  @Input() commits!: GithubCommitAPI[];
 }

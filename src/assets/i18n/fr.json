@@ -6,5 +6,9 @@
   "wiremindApp.searchProject.project.language": "Développé en {{language}}",
   "wiremindApp.searchProject.project.updateDate": "Modifié le {{date}}",
   "wiremindApp.repository.detail.title": "Github Repository",
-  "wiremindApp.repository.detail.subtitle": "Analyse du repository"
+  "wiremindApp.repository.detail.subtitle": "Analyse du repository",
+  "wiremindApp.repository.detail.committers.title": "Analyses des contributeurs",
+  "wiremindApp.repository.detail.committers.description": "Nous mettons en lumière les principaux contributeurs du dépôt GitHub, en mettant en évidence leur impact à travers les statistiques de commits. Cela offre un aperçu de la dynamique de collaboration du projet et reconnaît les contributeurs les plus actifs.",
+  "wiremindApp.repository.detail.commits.title": "Analyse de la chronologie des commits",
+  "wiremindApp.repository.detail.commits.description": "Nous présentons une visualisation de l'évolution des commits au fil du temps. Cela permet de suivre le rythme de développement du projet, d'identifier les moments d'activité intense et de mieux comprendre la progression du code source."
 }
