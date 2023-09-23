@@ -9,12 +9,12 @@ import { TranslateService } from '@ngx-translate/core';
 export class LocalDatePipe implements PipeTransform {
   constructor(private translateService: TranslateService) {}
 
-  transform(value: any, pattern = 'mediumDate'): string | null {
+  transform(value: any, pattern = 'mediumDate'): string {
     const datePipe = new DatePipe(this.translateService.currentLang);
     if (!value) {
       console.warn('Invalid date provided to date pipe');
       return 'Invalid date';
     }
-    return datePipe.transform(value, pattern);
+    return <string>datePipe.transform(value, pattern);
   }
 }

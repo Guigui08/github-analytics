@@ -10,10 +10,14 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { ContributorsCardComponent } from './contributors-card/contributors-card.component';
 import { CommitsRepartitionCardComponent } from './commits-repartition-card/commits-repartition-card.component';
 import { OrderByModule } from '../../shared/pipe/order-by/order-by.module';
-import {GithubRepositoryCardModule} from "../../shared/component/github-repository-card/github-repository-card.module";
+import { GithubRepositoryCardModule } from '../../shared/component/github-repository-card/github-repository-card.module';
+import { CommitsTimelineComponent } from './commits-timeline/commits-timeline.component';
+import { TimelineModule } from 'primeng/timeline';
+import { CardModule } from 'primeng/card';
+import { LocalDateModule } from '../../shared/pipe/local-date/local-date.module';
 
 @NgModule({
-  declarations: [RepositoryDetailComponent, ContributorsCardComponent, CommitsRepartitionCardComponent],
+  declarations: [RepositoryDetailComponent, ContributorsCardComponent, CommitsRepartitionCardComponent, CommitsTimelineComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(repositoryDetailRoutes),
@@ -23,6 +27,9 @@ import {GithubRepositoryCardModule} from "../../shared/component/github-reposito
     ProgressBarModule,
     OrderByModule,
     GithubRepositoryCardModule,
+    TimelineModule,
+    CardModule,
+    LocalDateModule,
   ],
 })
 export class RepositoryDetailModule {}
