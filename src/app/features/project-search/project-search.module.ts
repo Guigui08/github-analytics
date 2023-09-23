@@ -8,13 +8,13 @@ import { AutocompleteModule } from '../../shared/design-system/autocomplete/auto
 import { TranslateModule } from '@ngx-translate/core';
 import { LoadingPipeModule } from '../../shared/pipe/loading/loading.module';
 import { LoadingSpinnerModule } from '../../shared/component/loading-spinner/loading-spinner.module';
-import { ProjectSearchItemComponent } from './project-search-item/project-search-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LocalDateModule } from '../../shared/pipe/local-date/local-date.module';
 import { routes } from './project-search.routes';
+import { GithubRepositoryCardModule } from '../../shared/component/github-repository-card/github-repository-card.module';
 
 @NgModule({
-  declarations: [ProjectSearchComponent, ProjectSearchItemComponent],
+  declarations: [ProjectSearchComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -26,6 +26,7 @@ import { routes } from './project-search.routes';
     LoadingSpinnerModule,
     FontAwesomeModule,
     LocalDateModule,
+    GithubRepositoryCardModule,
   ],
 })
 export class ProjectSearchModule {}

@@ -1,13 +1,14 @@
-<wmd-page-header [title]="repository?.name"
-                 [subTitle]="repository?.owner?.login"></wmd-page-header>
+<div class="repository-container">
+  <wmd-github-repository-card [repository]="repository" [static]="true"></wmd-github-repository-card>
+</div>
 
 <div class="main-container">
-    <div>
-        <h3>Committers</h3>
+  <div>
+    <h3>Committers</h3>
 
-        <div class="contributors-container">
-            <wmd-contributors-card [committers]="committers"></wmd-contributors-card>
-            <wmd-commits-repartition-card [commits]="commits"></wmd-commits-repartition-card>
-        </div>
+    <div class="contributors-container">
+      <wmd-contributors-card [committers]="committers"></wmd-contributors-card>
+      <wmd-commits-repartition-card [commits]="commits"></wmd-commits-repartition-card>
     </div>
+  </div>
 </div>

@@ -1,5 +1,3 @@
-<wmd-page-header [title]="'wiremindApp.searchProject.title'" [subTitle]="'wiremindApp.searchProject.subtitle'"></wmd-page-header>
-
 <form class="search-form" [formGroup]="searchForm">
   <wmd-autocomplete
     [searchForm]="searchForm"
@@ -12,7 +10,11 @@
 <ng-container *ngIf="obs$ | loading | async as obs">
   <ng-template [ngIf]="obs?.value?.items">
     <div class="projects-container">
-      <wmd-project-search-item *ngFor="let repo of obs.value.items" [repository]="repo"></wmd-project-search-item>
+      <wmd-github-repository-card
+        *ngFor="let repo of obs.value.items"
+        [repository]="repo"
+        (onCardClick)="onCardClick($event)"
+      ></wmd-github-repository-card>
     </div>
   </ng-template>
 

@@ -10,6 +10,7 @@ import { NavbarModule } from './layout/navbar/navbar.module';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { InitAppConfigurationService } from './shared/service/init-app-configuration.service';
+import { WmdPageHeaderModule } from './shared/design-system/page-header/page-header.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -35,6 +36,7 @@ export function ConfigurationInit(initAppConfigurationService: InitAppConfigurat
     }),
     NavbarModule,
     FontAwesomeModule,
+    WmdPageHeaderModule,
   ],
   providers: [
     {

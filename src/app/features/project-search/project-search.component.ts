@@ -5,6 +5,7 @@ import { GitHubService } from '../../shared/service/github.service';
 import { AbstractObsList } from '../../shared/component/abstract/abstract-obs-list';
 import { Pageable, Paginated } from '../../shared/model/pagination/pagination.model';
 import { GithubRepository } from '../../shared/model/github/github-repository.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'wmd-project-search',
@@ -15,7 +16,7 @@ export class ProjectSearchComponent extends AbstractObsList<GithubRepository> im
   public searchForm!: FormGroup;
   private search!: string;
 
-  constructor(private readonly fb: FormBuilder, private readonly githubService: GitHubService) {
+  constructor(private readonly fb: FormBuilder, private readonly githubService: GitHubService, private readonly router: Router) {
     super();
   }
 
@@ -28,6 +29,18 @@ export class ProjectSearchComponent extends AbstractObsList<GithubRepository> im
   public onSearch(value: string): void {
     this.search = value;
     this.clear();
+  }
+
+  public onCardClick(repository: GithubRepository) {
+    if (!repository?.name) {
+      throw new Error('Repository name is not defined');
+    }
+
+    if (!repository?.owner?.login) {
+      throw new Error('Repository owner is not defined');
+    }
+
+    this.router.navigate(['/repository', repository.owner.login, repository.name]);
   }
 
   protected findAll(pageable: Pageable): Observable<Paginated<GithubRepository[]>> | undefined {

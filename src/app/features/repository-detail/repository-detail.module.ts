@@ -10,6 +10,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { ContributorsCardComponent } from './contributors-card/contributors-card.component';
 import { CommitsRepartitionCardComponent } from './commits-repartition-card/commits-repartition-card.component';
 import { OrderByModule } from '../../shared/pipe/order-by/order-by.module';
+import {GithubRepositoryCardModule} from "../../shared/component/github-repository-card/github-repository-card.module";
 
 @NgModule({
   declarations: [RepositoryDetailComponent, ContributorsCardComponent, CommitsRepartitionCardComponent],
@@ -21,6 +22,7 @@ import { OrderByModule } from '../../shared/pipe/order-by/order-by.module';
     TooltipModule,
     ProgressBarModule,
     OrderByModule,
+    GithubRepositoryCardModule,
   ],
 })
 export class RepositoryDetailModule {}
