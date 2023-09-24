@@ -13,6 +13,14 @@
   max-width: 1200px;
   margin: auto;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+
+  .back-link {
+    color: var(--text-color);
+    cursor: pointer;
+  }
 
   .header {
     margin-bottom: 48px;
@@ -20,6 +28,7 @@
 
   .title {
     color: var(--text-color);
+    margin-top: 0;
 
     &.color-inherit {
       color: inherit;
@@ -39,5 +48,15 @@
   .subtitle:hover {
     font-size: 17px;
     padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    padding: 32px 24px;
+
+    .header {
+      margin-bottom: 32px;
+    }
   }
 }

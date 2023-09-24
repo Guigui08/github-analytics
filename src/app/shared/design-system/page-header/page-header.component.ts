@@ -8,4 +8,9 @@ import { Component, Input } from '@angular/core';
 export class WnbPageHeaderComponent {
   @Input() title!: string | undefined;
   @Input() subTitle!: string | undefined;
+  @Input() showBackButton = false;
+
+  previousState() {
+    window.history.back();
+  }
 }

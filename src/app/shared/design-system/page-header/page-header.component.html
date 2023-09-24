@@ -3,7 +3,10 @@
 <div class="header-container">
   <div class="header">
     <h1 *ngIf="title" class="title">{{title | translate}}</h1>
-
     <h5 role="presentation" class="subtitle" *ngIf="subTitle">{{subTitle | translate}}</h5>
   </div>
+
+  <a class="back-link" (click)="previousState()" *ngIf="showBackButton">
+    <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span role="button">{{'wiremindApp.action.back' | translate}}</span>
+  </a>
 </div>

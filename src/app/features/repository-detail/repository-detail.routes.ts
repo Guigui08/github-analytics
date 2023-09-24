@@ -29,5 +29,8 @@ export const repositoryDetailRoutes = [
       committers: githubCommittersResolver,
       commits: githubCommitsResolver,
     },
+    data: {
+      showBackButton: true,
+    },
   },
 ];
