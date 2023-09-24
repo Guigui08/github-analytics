@@ -7,20 +7,28 @@
   ></wmd-autocomplete>
 </form>
 
-<ng-container *ngIf="obs$ | loading | async as obs">
-  <ng-template [ngIf]="obs?.value?.items">
+<ng-template [ngIf]="items.length > 0">
+  <div class="results-container">
+    <span class="results">{{'wiremindApp.searchProject.results.count' | translate : {total: totalItems} }}</span>
     <div class="projects-container">
       <wmd-github-repository-card
-        *ngFor="let repo of obs.value.items"
+        *ngFor="let repo of items"
         [repository]="repo"
         (onCardClick)="onCardClick($event)"
       ></wmd-github-repository-card>
     </div>
-  </ng-template>
 
-  <ng-template [ngIf]="obs?.loading">
-    <div class="loading-spinner-container">
-      <wmd-loading-spinner></wmd-loading-spinner>
-    </div>
-  </ng-template>
-</ng-container>
+    <p-button
+      *ngIf="page !== pagesCount && items.length > 0"
+      [label]="'wiremindApp.searchProject.results.loadMore' | translate"
+      styleClass="p-button-raised p-button-text p-button-secondary"
+      (onClick)="loadPage(page + 1)"
+    ></p-button>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="loading">
+  <div class="loading-spinner-container">
+    <wmd-loading-spinner></wmd-loading-spinner>
+  </div>
+</ng-template>

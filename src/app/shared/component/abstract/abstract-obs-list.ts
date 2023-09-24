@@ -1,37 +1,45 @@
 import { Directive } from '@angular/core';
-import { concat, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Pageable, Paginated } from '../../model/pagination/pagination.model';
 
-export const ITEMS_PER_PAGE = 20;
+export const ITEMS_PER_PAGE = 36;
 
 @Directive()
 export abstract class AbstractObsList<T> {
-  public obs$!: Observable<Paginated<T[]>> | undefined;
+  items: T[] = [];
 
   totalItems: number = 0;
   itemsPerPage = ITEMS_PER_PAGE;
-  page: number = 0;
-  previousPage: number = 0;
+  page: number = 1;
+  previousPage: number = 1;
   ascending = true;
   sort!: string;
+  loading = false;
+  pagesCount = 0;
 
   loadPage(page: number): void {
     if (page !== this.previousPage) {
-      this.previousPage = page;
+      this.previousPage = this.page;
+      this.page = page;
       this.loadAll();
     }
   }
 
   protected loadAll(clear?: boolean): void {
     try {
-      if (clear || !this.obs$) {
-        this.obs$ = this.findAll(this.buildPageable())?.pipe(map((obs) => obs));
-      } else {
-        this.obs$ = concat(
-          this.obs$ as Observable<Paginated<T[]>>,
-          this.findAll(this.buildPageable())?.pipe(map((obs) => obs)) as Observable<Paginated<T[]>>
-        );
-      }
+      this.loading = true;
+      this.findAll(this.buildPageable())
+        ?.pipe(map((obs) => obs))
+        .subscribe((res) => {
+          if (clear) {
+            this.items = res.items;
+            this.totalItems = res.total;
+            this.pagesCount = Math.ceil(this.totalItems / ITEMS_PER_PAGE);
+          } else {
+            this.items.push(...res.items);
+          }
+          this.loading = false;
+        });
     } catch (error) {
       console.error({ error });
       throw error;
@@ -39,7 +47,7 @@ export abstract class AbstractObsList<T> {
   }
 
   protected clear(): void {
-    this.page = 0;
+    this.page = 1;
     this.previousPage = this.page;
     this.loadAll(true);
   }
@@ -48,7 +56,7 @@ export abstract class AbstractObsList<T> {
 
   protected buildPageable(): Pageable {
     return {
-      page: Math.max(0, this.page),
+      page: Math.max(1, this.page),
       size: this.itemsPerPage,
       sort: this.sort,
       order: this.ascending ? 'asc' : 'desc',
