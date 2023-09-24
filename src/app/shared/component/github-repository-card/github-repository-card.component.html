@@ -5,7 +5,9 @@
 
       <div class="title-container">
         <div class="title" *ngIf="repository?.name">{{ repository!.name }}</div>
-        <div *ngIf="repository?.owner?.login" class="subtitle">{{ repository.owner!.login }}</div>
+        <div *ngIf="repository?.owner?.login" class="subtitle">
+          {{ 'wiremindApp.searchProject.project.by' | translate : {name: repository.owner!.login} }}
+        </div>
       </div>
     </div>
 
