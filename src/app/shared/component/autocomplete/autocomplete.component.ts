@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlContainer, FormGroup, FormGroupDirective } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
-import { AbstractAutoCloseSubscriptions } from '../../component/abstract/abstract-auto-close-subscriptions';
+import { AbstractAutoCloseSubscriptions } from '../abstract/abstract-auto-close-subscriptions';
 
 @Component({
   selector: 'wmd-autocomplete',
@@ -22,7 +22,6 @@ export class AutocompleteComponent extends AbstractAutoCloseSubscriptions implem
         ?.get(this.searchFormControlName!)
         ?.valueChanges?.pipe(distinctUntilChanged(), debounceTime(200))
         .subscribe((value) => {
-          console.log(value);
           this.onSearch.emit(value);
         })
     );
