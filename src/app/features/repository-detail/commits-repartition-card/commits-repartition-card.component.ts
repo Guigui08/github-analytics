@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GithubCommitAPI } from '../../../shared/model/github/github-commit.model';
 
 interface CommitRepartition {
   name: string;
@@ -11,14 +12,14 @@ interface CommitRepartition {
   styleUrls: ['./commits-repartition-card.component.scss'],
 })
 export class CommitsRepartitionCardComponent implements OnInit {
-  @Input() commits!: any[];
+  @Input() commits!: GithubCommitAPI[];
 
   repartitionCommits: CommitRepartition[] = [];
 
   ngOnInit() {
     const commitRepartition = this.commits
-      .map((commit) => commit?.author?.login || commit?.committer?.login)
-      .reduce(function (acc, curr) {
+      .map((commit) => commit?.committer?.login || commit?.commit?.committer?.name || 'Unknown')
+      .reduce(function (acc: any, curr: string) {
         return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
       }, {});
     this.repartitionCommits = Object.keys(commitRepartition).map((key) => ({

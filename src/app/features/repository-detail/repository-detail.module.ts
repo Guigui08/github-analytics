@@ -12,8 +12,6 @@ import { CommitsRepartitionCardComponent } from './commits-repartition-card/comm
 import { OrderByModule } from '../../shared/pipe/order-by/order-by.module';
 import { GithubRepositoryCardModule } from '../../shared/component/github-repository-card/github-repository-card.module';
 import { CommitsTimelineComponent } from './commits-timeline/commits-timeline.component';
-import { TimelineModule } from 'primeng/timeline';
-import { CardModule } from 'primeng/card';
 import { LocalDateModule } from '../../shared/pipe/local-date/local-date.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { TextSliceModule } from '../../shared/pipe/text-slice/text-slice.module';
@@ -30,8 +28,6 @@ import { ButtonModule } from 'primeng/button';
     ProgressBarModule,
     OrderByModule,
     GithubRepositoryCardModule,
-    TimelineModule,
-    CardModule,
     LocalDateModule,
     TranslateModule,
     TextSliceModule,
