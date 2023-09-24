@@ -43,3 +43,23 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    padding: 4px 24px;
+
+    .paragraph-container {
+      margin-bottom: 4px !important;
+    }
+  }
+
+  .repository-container {
+    padding: 0 24px;
+  }
+}
