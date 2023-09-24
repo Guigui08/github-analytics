@@ -1,0 +1,97 @@
+.timeline-container {
+  display: flex;
+  position: relative;
+  margin-left: 16px;
+  padding: 0px 0px 16px;
+
+  &:before {
+    background-color: rgb(216, 222, 228);
+    bottom: 0;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 2px;
+  }
+
+  .timeline-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 3px 20px 8px -7px;
+    width: 16px;
+    height: 16px;
+
+    svg {
+      fill: var(--secondary-color);
+    }
+  }
+
+  .timeline-body {
+    width: 100%;
+
+    .timeline-date {
+      margin-bottom: 16px;
+    }
+
+    .timeline-commits {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .timeline-commit {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        a {
+          font-weight: bold;
+          color: black;
+        }
+
+        .committer-container {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .committer {
+            display: flex;
+            align-items: center;
+
+            .avatar {
+              width: 32px;
+              height: 32px;
+              margin-right: 8px;
+
+              img {
+                width: 100%;
+                border-radius: 50%;
+              }
+            }
+          }
+
+          .date {
+            font-size: 12px;
+            color: rgb(88, 96, 105);
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          .committer-container {
+            flex-direction: column;
+            align-items: start;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}

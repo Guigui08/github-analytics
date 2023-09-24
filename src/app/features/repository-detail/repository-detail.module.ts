@@ -16,6 +16,8 @@ import { TimelineModule } from 'primeng/timeline';
 import { CardModule } from 'primeng/card';
 import { LocalDateModule } from '../../shared/pipe/local-date/local-date.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { TextSliceModule } from '../../shared/pipe/text-slice/text-slice.module';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [RepositoryDetailComponent, ContributorsCardComponent, CommitsRepartitionCardComponent, CommitsTimelineComponent],
@@ -32,6 +34,8 @@ import { TranslateModule } from '@ngx-translate/core';
     CardModule,
     LocalDateModule,
     TranslateModule,
+    TextSliceModule,
+    ButtonModule,
   ],
 })
 export class RepositoryDetailModule {}

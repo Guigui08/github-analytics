@@ -11,5 +11,8 @@
   "wiremindApp.repository.detail.committers.description": "We reveal the key contributors to the GitHub repository, highlighting their impact through commit statistics. This provides insights into the project's collaborative dynamics and acknowledges the most active contributors.",
   "wiremindApp.repository.detail.commits.title": "Commits Timeline Analytics",
   "wiremindApp.repository.detail.commits.description": "We provide a visualization of the commit history over time. This allows you to track the project's development pace, identify periods of intense activity, and gain a better understanding of source code progression.",
-  "wiremindApp.action.back": "Go back"
+  "wiremindApp.action.back": "Go back",
+  "wiremindApp.repository.detail.commits.commit.committedOn": "committed on {{date}}",
+  "wiremindApp.repository.detail.commits.newer": "Newer",
+  "wiremindApp.repository.detail.commits.older": "Older"
 }
