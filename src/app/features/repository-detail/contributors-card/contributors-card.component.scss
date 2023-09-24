@@ -1,17 +1,12 @@
 .committers-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  gap: 8px;
+
+  & > * {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    gap: 8px;
-
-    & > * {
-        display: flex;
-        align-items: center;
-
-        &:not(:last-child) {
-            margin-right: 10px;
-        }
-    }
-
+    align-items: center;
+  }
 }

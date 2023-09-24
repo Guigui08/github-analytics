@@ -8,7 +8,7 @@
     <span>{{'wiremindApp.repository.detail.committers.description' | translate}}</span>
 
     <div class="contributors-container">
-      <wmd-contributors-card [committers]="committers"></wmd-contributors-card>
+      <wmd-contributors-card *ngIf="committers.length > 0" [committers]="committers"></wmd-contributors-card>
       <wmd-commits-repartition-card [commits]="commits"></wmd-commits-repartition-card>
     </div>
   </div>
